@@ -1,0 +1,8 @@
+<select
+  [ngModel]="currency()"
+  (ngModelChange)="currency.set($event)"
+  (change)="valueChange.emit()">
+  @for (option of currencyList; track option) {
+    <option [value]="option">{{ option }}</option>
+  }
+</select>

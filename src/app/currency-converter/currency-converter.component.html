@@ -1,0 +1,24 @@
+<div>
+  <div>Конвертер валют</div>
+  <div>
+    <app-currency-select
+      [currency]="fromCurrencyCode"
+      [currencyList]="currency"
+      (valueChange)="changeCurrencyType()" />
+    <app-currency-input
+      [value]="fromCurrencyInput"
+      name="fromCurrencyInput"
+      type="number"
+      (valueChange)="changeFromCurrency($event, fromCurrencyCode())" />
+    <button (click)="changePosition()">Смена позиций валют</button>
+    <app-currency-select
+      [currency]="toCurrencyCode"
+      [currencyList]="currency"
+      (valueChange)="changeCurrencyType()" />
+    <app-currency-input
+      [value]="toCurrencyInput"
+      name="toCurrencyInput"
+      type="number"
+      (valueChange)="changeToCurrency($event, toCurrencyCode())" />
+  </div>
+</div>
